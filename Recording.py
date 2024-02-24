@@ -4,7 +4,7 @@ import time
 from myfun import camThread,camPreview
 
 # Cam No
-camnum=1
+camnum=0
 # Create an object to read
 # from camera
 video = cv2.VideoCapture(camnum)#, cv2.CAP_DSHOW) # this is the magic!
@@ -51,4 +51,4 @@ thread1.start()
 #thread2.start()
 
 time.sleep(10)
-import rcb4motionplay
+#import rcb4motionplay
