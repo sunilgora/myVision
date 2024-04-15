@@ -39,6 +39,8 @@ def camPreview(previewName, camID, saveVid, fps, size):
         rval, frame = cam.read()
     else:
          rval = False
+    
+    flag=0
     # Images from video
     while rval:
         # time when we finish processing for this frame
@@ -50,6 +52,14 @@ def camPreview(previewName, camID, saveVid, fps, size):
             rval, frame = cam.read()
             print(fps_current)
             #saveVid.write(frame)
+            key2 = cv2.waitKey(5)
+            # Record on R key
+            if key2==114 or flag:
+                flag=1
+                imgs.append(frame)
+
+            prev_frame_time = new_frame_time
+            key = cv2.waitKey(5)
             imgs.append(frame)
             prev_frame_time = new_frame_time
             key = cv2.waitKey(5)
